@@ -1,0 +1,7 @@
+name: FakePlugins
+version: '1.0'
+main: net.ru.fakePlugins.FakePlugins
+api-version: '1.21'
+authors: [ luci ]
+description: Сундук ест ресурсы для привата
+website: terracraft.net.ru
