@@ -1,0 +1,14 @@
+# Язык сообщений: ru / en (переключается командой /fp setlanguage)
+language: ru
+
+# true — реальные плагины не показываются никому,
+# кроме владельцев права fakeplugins.reallist
+hide-real-list: true
+
+# Нестрогий парсинг MiniMessage:
+#   true  — теги <...> обязательны, < в именах плагинов ЛОМАЕТ парсинг
+#   false — «неизвестные» теги воспринимаются как обычный текст
+min-message-strict: false
+
+# Скрытые реальные плагины (управляется /fp hide, /fp unhide)
+hidden-plugins: []

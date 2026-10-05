@@ -1,0 +1,47 @@
+prefix: "<gray>[<gold>FakePlugins</gold>]</gray> "
+
+help:
+  header: "<gold>=== FakePlugins ===</gold>"
+  list: "<yellow>/fakepl list</yellow> <gray>— mixed list</gray>"
+  reallist: "<yellow>/fakepl reallist</yellow> <gray>— real only</gray>"
+  fakelist: "<yellow>/fakepl fakelist</yellow> <gray>— fake only</gray>"
+  add: "<yellow>/fakepl add <name></yellow>"
+  delete: "<yellow>/fakepl delete <name></yellow>"
+  rename: "<yellow>/fakepl rename <old> <new></yellow>"
+  enable: "<yellow>/fakepl enable <name></yellow>"
+  disable: "<yellow>/fakepl disable <name></yellow>"
+  hide: "<yellow>/fakepl hide <plugin></yellow> <gray>— hide a real plugin</gray>"
+  unhide: "<yellow>/fakepl unhide <plugin></yellow> <gray>— show it back</gray>"
+  hidden: "<yellow>/fakepl hidden</yellow> <gray>— list hidden</gray>"
+  reload: "<yellow>/fakepl reload</yellow> <gray>— reload configs</gray>"
+  setlanguage: "<yellow>/fakepl setlanguage <ru|en></yellow> <gray>— change language</gray>"
+
+plugins-header: "<yellow>Plugins (<white>%count%</white>):</yellow>"
+real-plugins-header: "<yellow>Real plugins (<white>%count%</white>):</yellow>"
+fake-plugins-header: "<yellow>Fake plugins (<white>%count%</white>):</yellow>"
+hidden-plugins-header: "<yellow>Hidden plugins (<white>%count%</white>):</yellow>"
+
+plugin-line: "<gray> • </gray><hover:show_text:'<gray>Plugin: </gray><white>%name%</white>'><click:suggest_command:'/fakepl hide %name%'>%name-colored%</click></hover>"
+
+reload-done: "<gradient:#00FFAA:#00AAFF>Configuration reloaded.</gradient>"
+
+hidden-added: "<green>Plugin <white>%name%</white> is now hidden.</green>"
+hidden-removed: "<green>Plugin <white>%name%</white> is visible again.</green>"
+hidden-not-found: "<red>Plugin <white>%name%</white> not found among real plugins.</red>"
+hidden-already: "<red>Plugin <white>%name%</white> is already hidden.</red>"
+hidden-list-empty: "<gray>Hidden plugins list is empty.</gray>"
+
+added: "<green>Fake plugin <white>%name%</white> added.</green>"
+already-exists: "<red>Plugin already exists.</red>"
+deleted: "<green>Fake plugin <white>%name%</white> removed.</green>"
+not-found: "<red>Plugin not found.</red>"
+renamed: "<green>Renamed: <white>%old%</white> → <white>%new%</white></green>"
+rename-failed: "<red>Not found or new name taken.</red>"
+enabled: "<green>Plugin <white>%name%</white> enabled.</green>"
+disabled: "<green>Plugin <white>%name%</white> disabled.</green>"
+no-permission: "<red>No permission.</red>"
+usage: "<red>Usage: <white>%usage%</white></red>"
+
+lang-changed: "<green>Language switched to <white>%lang%</white>.</green>"
+lang-same: "<gray>Language is already <white>%lang%</white>.</gray>"
+lang-unknown: "<red>Unknown language: <white>%lang%</white>. Available: ru, en.</red>"

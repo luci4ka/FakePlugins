@@ -1,7 +1,7 @@
 name: FakePlugins
 version: '1.0'
-main: net.ru.fakePlugins.FakePlugins
+main: net.ru.terracraft.FakePlugins
 api-version: '1.21'
 authors: [ luci ]
-description: Сундук ест ресурсы для привата
+description: Лёгкий плагин для показа фейкового списка плагинов
 website: terracraft.net.ru

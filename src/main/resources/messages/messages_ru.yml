@@ -1,0 +1,47 @@
+prefix: "<gray>[<gold>FakePlugins</gold>]</gray> "
+
+help:
+  header: "<gold>=== FakePlugins ===</gold>"
+  list: "<yellow>/fakepl list</yellow> <gray>— смешанный список</gray>"
+  reallist: "<yellow>/fakepl reallist</yellow> <gray>— только реальные</gray>"
+  fakelist: "<yellow>/fakepl fakelist</yellow> <gray>— только фейковые</gray>"
+  add: "<yellow>/fakepl add <имя></yellow>"
+  delete: "<yellow>/fakepl delete <имя></yellow>"
+  rename: "<yellow>/fakepl rename <старое> <новое></yellow>"
+  enable: "<yellow>/fakepl enable <имя></yellow>"
+  disable: "<yellow>/fakepl disable <имя></yellow>"
+  hide: "<yellow>/fakepl hide <плагин></yellow> <gray>— скрыть реальный плагин</gray>"
+  unhide: "<yellow>/fakepl unhide <плагин></yellow> <gray>— показать обратно</gray>"
+  hidden: "<yellow>/fakepl hidden</yellow> <gray>— список скрытых</gray>"
+  reload: "<yellow>/fakepl reload</yellow> <gray>— перезагрузить конфиги</gray>"
+  setlanguage: "<yellow>/fakepl setlanguage <ru|en></yellow> <gray>— сменить язык</gray>"
+
+plugins-header: "<yellow>Plugins (<white>%count%</white>):</yellow>"
+real-plugins-header: "<yellow>Реальные плагины (<white>%count%</white>):</yellow>"
+fake-plugins-header: "<yellow>Фейковые плагины (<white>%count%</white>):</yellow>"
+hidden-plugins-header: "<yellow>Скрытые плагины (<white>%count%</white>):</yellow>"
+
+plugin-line: "<gray> • </gray><hover:show_text:'<gray>Плагин: </gray><white>%name%</white>'><click:suggest_command:'/fakepl hide %name%'>%name-colored%</click></hover>"
+
+reload-done: "<gradient:#00FFAA:#00AAFF>Конфигурация перезагружена.</gradient>"
+
+hidden-added: "<green>Плагин <white>%name%</white> скрыт из списка.</green>"
+hidden-removed: "<green>Плагин <white>%name%</white> снова виден.</green>"
+hidden-not-found: "<red>Плагин <white>%name%</white> не найден среди реальных.</red>"
+hidden-already: "<red>Плагин <white>%name%</white> уже скрыт.</red>"
+hidden-list-empty: "<gray>Список скрытых плагинов пуст.</gray>"
+
+added: "<green>Фейковый плагин <white>%name%</white> добавлен.</green>"
+already-exists: "<red>Такой плагин уже есть в списке.</red>"
+deleted: "<green>Фейковый плагин <white>%name%</white> удалён.</green>"
+not-found: "<red>Плагин не найден.</red>"
+renamed: "<green>Переименовано: <white>%old%</white> → <white>%new%</white></green>"
+rename-failed: "<red>Не найдено или новое имя занято.</red>"
+enabled: "<green>Плагин <white>%name%</white> включён.</green>"
+disabled: "<green>Плагин <white>%name%</white> отключён.</green>"
+no-permission: "<red>Недостаточно прав.</red>"
+usage: "<red>Использование: <white>%usage%</white></red>"
+
+lang-changed: "<green>Язык переключён на <white>%lang%</white>.</green>"
+lang-same: "<gray>Язык уже установлен на <white>%lang%</white>.</gray>"
+lang-unknown: "<red>Неизвестный язык: <white>%lang%</white>. Доступны: ru, en.</red>"
