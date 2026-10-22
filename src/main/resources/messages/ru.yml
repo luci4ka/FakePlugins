@@ -14,7 +14,6 @@ help:
   unhide: "<yellow>/fakepl unhide <плагин></yellow> <gray>— показать обратно</gray>"
   hidden: "<yellow>/fakepl hidden</yellow> <gray>— список скрытых</gray>"
   reload: "<yellow>/fakepl reload</yellow> <gray>— перезагрузить конфиги</gray>"
-  setlanguage: "<yellow>/fakepl setlanguage <ru|en></yellow> <gray>— сменить язык</gray>"
 
 plugins-header: "<yellow>Plugins (<white>%count%</white>):</yellow>"
 real-plugins-header: "<yellow>Реальные плагины (<white>%count%</white>):</yellow>"
@@ -41,7 +40,3 @@ enabled: "<green>Плагин <white>%name%</white> включён.</green>"
 disabled: "<green>Плагин <white>%name%</white> отключён.</green>"
 no-permission: "<red>Недостаточно прав.</red>"
 usage: "<red>Использование: <white>%usage%</white></red>"
-
-lang-changed: "<green>Язык переключён на <white>%lang%</white>.</green>"
-lang-same: "<gray>Язык уже установлен на <white>%lang%</white>.</gray>"
-lang-unknown: "<red>Неизвестный язык: <white>%lang%</white>. Доступны: ru, en.</red>"

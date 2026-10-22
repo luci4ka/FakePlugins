@@ -1,4 +1,4 @@
-package net.ru.terracraft;
+package ru.terracraft.fake;
 
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
@@ -36,9 +36,16 @@ public class FakeStore {
         try {
             if (!Files.exists(file)) {
                 Files.createDirectories(file.getParent());
-                Files.writeString(file, "", StandardCharsets.UTF_8);
-                return;
+                try {
+                    plugin.saveResource("plugins.txt", false);
+                } catch (IllegalArgumentException ignored) {
+                    // ресурса нет — создаём пустой
+                    Files.writeString(file, "", StandardCharsets.UTF_8);
+                }
             }
+
+            if (!Files.exists(file)) return;
+
             for (String line : Files.readAllLines(file, StandardCharsets.UTF_8)) {
                 String s = line.trim();
                 if (s.isEmpty() || s.startsWith("#")) continue;
@@ -89,7 +96,6 @@ public class FakeStore {
 
     // ---------- Вывод ----------
 
-    /** Единый хелпер строки списка. */
     private Component line(String name, boolean enabled) {
         String safe = MessageService.escape(name);
         return msg.get("plugin-line", Map.of(
@@ -98,18 +104,21 @@ public class FakeStore {
         ));
     }
 
+    /**
+     * Смешанный список: реальные (кроме скрытых) + фейковые, отсортированные по имени.
+     */
     public void sendMixedList(CommandSender to) {
-        List<Component> lines = new ArrayList<>();
-
+        // Собираем в один TreeMap: имя → enabled. Реальные и фейковые смешиваются.
+        Map<String, Boolean> all = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
         for (Plugin p : Bukkit.getPluginManager().getPlugins()) {
             if (hidden.contains(p.getName())) continue;
-            lines.add(line(p.getName(), p.isEnabled()));
+            all.put(p.getName(), p.isEnabled());
         }
-        fakes.forEach((name, en) -> lines.add(line(name, en)));
+        all.putAll(fakes);
 
         to.sendMessage(msg.get("plugins-header",
-                Map.of("count", String.valueOf(lines.size()))));
-        lines.forEach(to::sendMessage);
+                Map.of("count", String.valueOf(all.size()))));
+        all.forEach((name, en) -> to.sendMessage(line(name, en)));
     }
 
     public void sendRealList(CommandSender to) {

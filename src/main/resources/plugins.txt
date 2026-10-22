@@ -1,0 +1,42 @@
+# FakePlugins — список фейковых плагинов.
+# Формат: <имя> : enable|disable
+# Строки с # игнорируются.
+# Управляется командой /fakepl или вручную + /fakepl reload.
+
+# --- Администрирование ---
+EssentialsX : enable
+LuckPerms : enable
+Vault : enable
+PlaceholderAPI : enable
+ProtocolLib : enable
+CommandAPI : enable
+
+# --- Мир и защита ---
+WorldEdit : enable
+WorldGuard : enable
+CoreProtect : enable
+GriefPrevention : enable
+LWC : enable
+
+# --- Экономика и магазины ---
+EssentialsXEconomy : enable
+ShopGUIPlus : enable
+AuctionHouse : enable
+
+# --- Чат и коммуникация ---
+ChatControl : enable
+DiscordSRV : enable
+
+# --- RPG и контент ---
+MythicMobs : enable
+ItemsAdder : enable
+ModelEngine : enable
+Citizens : enable
+
+# --- Оптимизация ---
+Spark : enable
+Chunky : enable
+
+# --- Отключённые (для правдоподобия) ---
+OldEconomy : disable
+LegacyRanks : disable

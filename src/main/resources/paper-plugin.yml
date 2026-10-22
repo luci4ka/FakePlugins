@@ -1,7 +1,42 @@
 name: FakePlugins
-version: '1.0'
-main: net.ru.terracraft.FakePlugins
-api-version: '1.21'
+version: '1.0.1'
+main: ru.terracraft.fake.FakePlugins
+api-version: '26.3'
 authors: [ luci ]
 description: Лёгкий плагин для показа фейкового списка плагинов
-website: terracraft.net.ru
+website: terra-craft.ru
+
+permissions:
+  fakeplugins.list:
+    description: "Просмотр смешанного списка"
+    default: op
+  fakeplugins.reallist:
+    description: "Просмотр реального списка"
+    default: op
+  fakeplugins.fakelist:
+    description: "Просмотр фейкового списка"
+    default: op
+  fakeplugins.add:
+    description: "Добавление фейка"
+    default: op
+  fakeplugins.delete:
+    description: "Удаление фейка"
+    default: op
+  fakeplugins.rename:
+    description: "Переименование фейка"
+    default: op
+  fakeplugins.enable:
+    description: "Включение фейка"
+    default: op
+  fakeplugins.disable:
+    description: "Отключение фейка"
+    default: op
+  fakeplugins.hide:
+    description: "Скрытие реального плагина"
+    default: op
+  fakeplugins.reload:
+    description: "Перезагрузка конфигов и смена языка"
+    default: op
+  fakeplugins.help:
+    description: "Помощь"
+    default: "true"

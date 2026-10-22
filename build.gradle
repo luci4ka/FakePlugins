@@ -1,10 +1,10 @@
 plugins {
     id 'java'
-    id 'com.gradleup.shadow' version '9.0.0'
+    id 'com.gradleup.shadow' version '9.3.2'
 }
 
-group = 'net.ru.terracraft'
-version = '1.0'
+group = 'ru.terracraft'
+version = '1.0.1'
 
 repositories {
     mavenCentral()
@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT'
+    compileOnly 'io.papermc.paper:paper-api:26.3.build.+'
     implementation 'org.bstats:bstats-bukkit:3.2.1'
     implementation 'com.tchristofferson:ConfigUpdater:2.2'
 }
@@ -29,15 +29,22 @@ tasks.withType(JavaCompile).configureEach {
 
 processResources {
     filteringCharset 'UTF-8'
-    // expand НЕ используем — version хардкод в paper-plugin.yml
+    // version хардкод в paper-plugin.yml — expand не нужен
 }
 
 shadowJar {
     archiveBaseName = 'FakePlugins'
     archiveClassifier = ''
     archiveVersion = project.version
-    relocate 'org.bstats', 'net.ru.terracraft.libs.bstats'
-    relocate 'com.tchristofferson.configupdater', 'net.ru.terracraft.libs.configupdater'
+
+    relocate 'org.bstats', 'ru.terracraft.fake.libs.bstats'
+    relocate 'com.tchristofferson.configupdater', 'ru.terracraft.fake.libs.configupdater'
+
+    exclude 'META-INF/maven/**'
+    exclude 'META-INF/LICENSE*'
+    exclude 'META-INF/NOTICE*'
+    exclude 'module-info.class'
+    mergeServiceFiles()
 }
 
 tasks.named('build') { dependsOn tasks.named('shadowJar') }
